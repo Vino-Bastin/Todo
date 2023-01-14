@@ -13,19 +13,13 @@ configureState(
         id: 1,
         title: "Test",
         idCompleted: false,
-        content: "I am a Todo",
+        content: "First todo",
       },
       {
         id: 2,
         title: "Test",
         isCompleted: false,
-        content: "I am a Todo",
-      },
-      {
-        id: 3,
-        title: "Test",
-        isCompleted: false,
-        content: "I am a Todo",
+        content: "second todo",
       },
     ],
   },
@@ -39,8 +33,9 @@ function App() {
   return (
     <div>
       <Header />
-      <section className=" ml-40 mr-40">
+      <section className="content ml-40 mr-40">
         <Route path={"/"} component={<TodoList />} />
+        <Route path={"/todo"} component={<TodoList />} />
         <Route path={"/new"} component={<NewTodo />} />
         <Route path={"/done"} component={<CompletedTodos />} />
       </section>

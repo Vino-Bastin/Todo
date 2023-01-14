@@ -1,5 +1,6 @@
 import React from "react";
 import useStore from "../Store/Store";
+import { navigator } from "../Route/Navigator";
 
 const NewTodo = () => {
   const dispatch = useStore()[1];
@@ -8,11 +9,10 @@ const NewTodo = () => {
     e.preventDefault();
     dispatch("NEW_TODO", {
       id: Math.random(),
+      createdTime: new Date().toLocaleString(),
       ...Object.fromEntries(new FormData(e.target).entries()),
     });
-    window.history.pushState({}, "", "/");
-    const newPath = new PopStateEvent("navigate");
-    window.dispatchEvent(newPath);
+    navigator("/");
   };
 
   return (

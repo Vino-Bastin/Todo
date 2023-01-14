@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 1%;
+  }
+  .content {
+    margin: 1%;
+  }
+}

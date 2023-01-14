@@ -1,11 +1,10 @@
 import React from "react";
+import { navigator } from "./Navigator";
 
 const Link = ({ to, children }) => {
   const navigate = (event) => {
     event.preventDefault();
-    window.history.pushState({}, "", to);
-    const newPath = new PopStateEvent("navigate");
-    window.dispatchEvent(newPath);
+    navigator(to);
   };
 
   return (

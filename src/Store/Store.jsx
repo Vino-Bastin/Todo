@@ -15,7 +15,7 @@ const useStore = () => {
         (subscription) => subscription !== setGlobalState
       );
     };
-  }, []);
+  }, [setGlobalState]);
 
   const dispatch = (action, payload) => {
     if (!globalActions[action]) throw new Error("invalid action");
